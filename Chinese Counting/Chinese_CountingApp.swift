@@ -11,7 +11,7 @@ import SwiftUI
 struct Chinese_CountingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
