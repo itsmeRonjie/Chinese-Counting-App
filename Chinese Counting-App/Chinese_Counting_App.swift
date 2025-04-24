@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Chinese_Counting_AppApp: App {
+struct Chinese_Counting_App: App {
     var body: some Scene {
         WindowGroup {
             MainView()
