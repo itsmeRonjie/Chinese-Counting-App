@@ -1,13 +1,13 @@
 //
 //  ContentView.swift
-//  Chinese Counting-App
+//  Chinese Counting
 //
 //  Created by Ronjie Diafante Man-on on 4/24/25.
 //
 
 import SwiftUI
 
-struct MainView: View {
+struct ContentView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    ContentView()
 }
