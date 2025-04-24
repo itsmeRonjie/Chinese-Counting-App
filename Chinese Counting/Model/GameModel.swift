@@ -32,7 +32,7 @@ struct GameModel {
     }
     
     mutating func generateNewProblem() {
-        alternatives = [6, 23, 5, 10]
+        alternatives = Int.generateUniqueNumbers(count: 4)
         answer = alternatives[3]
         alternatives = alternatives.shuffled()
     }
@@ -44,7 +44,7 @@ struct GameModel {
             volume: 1,
             turns: 0,
             answer: 10,
-            alternatives: [6, 23, 5, 10]
+            alternatives: Int.generateUniqueNumbers(count: 4).shuffled()
         )
     }
 }
