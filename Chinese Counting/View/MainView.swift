@@ -20,7 +20,9 @@ struct MainView: View {
                         score: gameVM.gameModel.score,
                         maxTurns: gameVM.gameModel.maxTurns
                     )
+                    
                     Spacer()
+                    
                     GearIconView(showSettings: $showSettings)
                 }
     
@@ -29,8 +31,9 @@ struct MainView: View {
                     isOn: $showPinyin.animation()
                 )
                 
+                Spacer()
+                
                 if let chineseNum = gameVM.gameModel.answer.num99ToChinese() {
-                    Spacer()
                     Text(chineseNum.chinese)
                         .font(.largeTitle)
                         .fontWeight(.semibold)
@@ -39,7 +42,13 @@ struct MainView: View {
                         .fontWeight(.semibold)
                         .opacity(showPinyin ? 1 : 0)
                 }
-                Spacer()
+                NumberOptionsView(
+                    numbers: gameVM.gameModel.alternatives,
+                    answer: gameVM.gameModel.answer
+                )
+                .onChange(of: gameVM.gameModel.turns) { _, _ in
+                    gameVM.gameModel.generateNewProblem()
+                }
             }
             .padding()
         }
