@@ -7,9 +7,6 @@
 
 import Foundation
 
-// https://chinese-proverbs.onrender.com/api/proverbs/random
-
-
 // MARK: - ProverbModel
 struct ProverbModel: Codable {
     let id: String
