@@ -9,8 +9,14 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(GameViewModel.self) var gameVM
+    
     @State private var showSettings: Bool = false
     @State private var showPinyin: Bool = true
+    @State private var done: Bool = false
+    
+    var gameOver: Bool {
+        gameVM.gameModel.gameOver
+    }
 
     var body: some View {
         ZStack {
@@ -51,6 +57,12 @@ struct MainView: View {
                 }
             }
             .padding()
+        }
+        .fullScreenCover(isPresented: $done) {
+            GameOverView()
+        }
+        .onChange(of: gameOver) { _, _ in
+            done = gameOver
         }
     }
 }
