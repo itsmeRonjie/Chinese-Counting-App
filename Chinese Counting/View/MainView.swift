@@ -9,40 +9,16 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(GameViewModel.self) var gameVM
+    @State var showSettings: Bool = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            
-            Button("Joy") {
-                gameVM.randomExpressionOfJoy()
-            }
-            .padding()
-            
-            Button("Incorrect") {
-                gameVM.incorrectSound()
-            }
-            .padding()
-            
-                        
-            Button("7") {
-                gameVM.playNumber(num: 9)
-            }
-            .padding()
-            
-            Button("30") {
-                gameVM.playNumber(num: 30)
-            }
-            .padding()
-            
-            Button("76") {
-                gameVM.playNumber(num: 76)
+        ZStack {
+            GearIconView(showSettings: $showSettings)
+            VStack {
+                Text("TODO")
             }
             .padding()
         }
-        .padding()
     }
 }
 
