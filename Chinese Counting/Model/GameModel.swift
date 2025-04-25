@@ -37,6 +37,11 @@ struct GameModel {
         alternatives = alternatives.shuffled()
     }
     
+    mutating func resetGame() {
+        score = 0
+        turns = 0
+    }
+    
     static var defaultModel: GameModel {
         .init(
             score: 0,
