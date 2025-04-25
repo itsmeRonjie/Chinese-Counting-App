@@ -81,6 +81,19 @@ struct SplashScreenView: View {
                 }
             }
         }
+        .onAppear {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                opacity = 0.8
+                scale = CGSize(width: 1, height: 1)
+                angle = 0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                withAnimation(.easeInOut(duration: 1.5)) {
+                    moveUp = true
+                    spacing = 20
+                }
+            }
+        }
     }
 }
 
