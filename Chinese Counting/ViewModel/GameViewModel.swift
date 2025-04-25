@@ -43,6 +43,11 @@ class GameViewModel {
         }
     }
     
+    func increaseScore() {
+        gameModel.score += 1
+        playNumber(num: gameModel.answer)
+    }
+    
     private func playDigit(digit: Int) {
         playSounds(name: digitToName(digit: digit) ?? "bell")
     }
