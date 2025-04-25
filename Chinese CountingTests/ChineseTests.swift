@@ -28,8 +28,7 @@ final class ChineseTests: XCTestCase {
         ]
         
         for i in 0..<nums.count {
-            let value1 = ChineseTests
-                .num99ToChinese(num: nums[i])
+            let value1 = i.num99ToChinese()
             
             XCTAssertNotNil(value1)
             
@@ -41,8 +40,7 @@ final class ChineseTests: XCTestCase {
         }
         
         for num in nilNums {
-            XCTAssertNil(ChineseTests.num99ToChinese(num: num))
+            XCTAssertNil(num.num99ToChinese())
         }
     }
-    
 }
