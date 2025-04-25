@@ -9,24 +9,19 @@ import SwiftUI
 
 struct GearIconView: View {
     @Binding var showSettings: Bool
-            
+    
     var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    withAnimation {
-                        showSettings.toggle()
-                    }
-                } label: {
-                    Image(systemName: "gearshape")
-                        .imageScale(.large)
+        HStack {
+            Button {
+                withAnimation {
+                    showSettings.toggle()
                 }
-                .foregroundStyle(showSettings ? .gray : Color("imageColor"))
-                Spacer()
+            } label: {
+                Image(systemName: "gearshape")
+                    .imageScale(.large)
             }
-            Spacer()
+            .foregroundStyle(showSettings ? .gray : Color("imageColor"))
         }
-        .padding()
     }
 }
 
