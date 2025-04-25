@@ -28,6 +28,17 @@ struct MainView: View {
                     showPinyin ? "Hide PinYin" : "Show Pinyin",
                     isOn: $showPinyin.animation()
                 )
+                
+                if let chineseNum = gameVM.gameModel.answer.num99ToChinese() {
+                    Spacer()
+                    Text(chineseNum.chinese)
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                    Text(chineseNum.pinyin)
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .opacity(showPinyin ? 1 : 0)
+                }
                 Spacer()
             }
             .padding()
