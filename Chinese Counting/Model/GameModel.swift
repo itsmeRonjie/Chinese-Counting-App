@@ -9,14 +9,14 @@ import Foundation
 
 struct GameModel {
     var score: Int
-    let maxturns: Int
+    let maxTurns: Int
     var volume: Float
     var turns: Int
     var answer: Int
     var alternatives: [Int]
     
     var gameCompleted: Bool {
-        turns >= maxturns
+        turns >= maxTurns
     }
     
     var gameOver: Bool {
@@ -40,7 +40,7 @@ struct GameModel {
     static var defaultModel: GameModel {
         .init(
             score: 0,
-            maxturns: 5,
+            maxTurns: 5,
             volume: 1,
             turns: 0,
             answer: 10,
