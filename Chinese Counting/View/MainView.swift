@@ -15,7 +15,11 @@ struct MainView: View {
         ZStack {
             GearIconView(showSettings: $showSettings)
             VStack {
-                Text("TODO")
+                ScoreView(
+                    score: gameVM.gameModel.score,
+                    maxTurns: gameVM.gameModel.maxTurns
+                )
+                Spacer()
             }
             .padding()
         }
