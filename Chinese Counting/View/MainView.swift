@@ -9,15 +9,24 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(GameViewModel.self) var gameVM
-    @State var showSettings: Bool = false
+    @State private var showSettings: Bool = false
+    @State private var showPinyin: Bool = true
 
     var body: some View {
         ZStack {
-            GearIconView(showSettings: $showSettings)
             VStack {
-                ScoreView(
-                    score: gameVM.gameModel.score,
-                    maxTurns: gameVM.gameModel.maxTurns
+                HStack {
+                    ScoreView(
+                        score: gameVM.gameModel.score,
+                        maxTurns: gameVM.gameModel.maxTurns
+                    )
+                    Spacer()
+                    GearIconView(showSettings: $showSettings)
+                }
+    
+                Toggle(
+                    showPinyin ? "Hide PinYin" : "Show Pinyin",
+                    isOn: $showPinyin.animation()
                 )
                 Spacer()
             }
