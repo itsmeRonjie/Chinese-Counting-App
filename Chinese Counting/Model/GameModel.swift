@@ -38,8 +38,16 @@ struct GameModel {
     }
     
     mutating func resetGame() {
-        score = 0
-        turns = 0
+        let alters = Int.generateUniqueNumbers(count: 4)
+        let answer = alters[3]
+        self = GameModel(
+            score: 0,
+            maxTurns: 5,
+            volume: self.volume,
+            turns: 0,
+            answer: answer,
+            alternatives: alters
+        )
     }
     
     static var defaultModel: GameModel {
